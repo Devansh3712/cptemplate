@@ -42,16 +42,49 @@ Commands:
 
  - `cptemplate` can be used by directly typing the command `cptemplate` in CMD/Terminal
 
-- For creating a new template file, the command `cptemplate new` is used, which creates a `new.py` file in the directory where `cptemplate` command is run
+- For creating a new template file, the command `cptemplate new` is used, which by default creates a `new.py` file in the directory where `cptemplate` command is run. By using `cptemplate new -n <file_name>`, template with name `file_name` will be created.
 
+```
+Usage: cptemplate new [OPTIONS]
+
+  create a new template file, default name new.py
+
+Options:
+  -n, --file_name TEXT  Set custom name for file
+  --help                Show this message and exit.
+```
+
+> default command, creates file `new.py`
 ```shell
 cptemplate new
 ```
 
-- For running/testing the file, the command `cptemplate test` is used
+> `-n <file_name>` command, creates file with name `file_name`
+```shell
+cptemplate new -n main
+```
 
+- For running/testing the file, the command `cptemplate test` is used to run `new.py` (default command). To open a file with custom name,
+the command `cptemplate test -n <file_name>` is used, to run `file_name.py` file
+
+```
+Usage: cptemplate test [OPTIONS]
+
+  run and test the code, by default runs new.py
+
+Options:
+  -n, --file_name TEXT  Open .py file with custom name
+  --help                Show this message and exit.
+```
+
+> runs by default `new.py`
 ```shell
 cptemplate test
+```
+
+> runs `file_name.py`
+```shell
+cptemplate test -n main
 ```
 
 ## Contributing

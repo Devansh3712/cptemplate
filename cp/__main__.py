@@ -189,22 +189,37 @@ def bfs_paths(graph, start, goal):
 def cptemplate():
     "competitive programming template for python"
 
+@click.option("-n", "--file_name", help = "Set custom name for file")
 @cptemplate.command()
-def new():
-    "create a new template file"
+def new(file_name: str):
+    "create a new template file, default name new.py"
 
-    file = open('new.py', 'w')
-    file.write(template)
-    file.close()
+    if file_name is not None:
+        file = open(f'{file_name}.py', 'w')
+        file.write(template)
+        file.close()
 
+    else:
+        file = open('new.py', 'w')
+        file.write(template)
+        file.close()
+
+@click.option("-n", "--file_name", help = "Open .py file with custom name")
 @cptemplate.command()
-def test():
-    "run and test the code"
+def test(file_name: str):
+    "run and test the code, by default runs new.py"
 
-    try:
-        os.system('cmd /k "python new.py"')
-    except:
-        print('An error occured, check new.py')
+    if file_name is not None:
+        try:
+            os.system(f'cmd /k "python {file_name}.py"')
+        except:
+            print(f'An error occured, check {file_name}.py file')
+
+    else:
+        try:
+            os.system('cmd /k "python new.py"')
+        except:
+            print('An error occured, check new.py file')
 
 @cptemplate.command()
 def info():
@@ -213,7 +228,8 @@ def info():
     info = [
         '\ncptemplate is a python library for making a pre-defined template for competitive programming',
         'It is an open-source project, made by Devansh, available on PyPi',
-        'Visit: https://github.com/Devansh3712/cptemplate'
+        'View on GitHub: https://github.com/Devansh3712/cptemplate',
+        'View on PyPi: https://pypi.org/project/cptemplate/'
     ]
 
     for line in info:
