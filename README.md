@@ -38,15 +38,17 @@ Commands:
   test  run and test the code
 ```
 
-`cptemplate` can be used by directly typing the command `cptemplate` in CMD/Terminal
+### `cptemplate` commands
 
-For creating a new template file, the command `cptemplate new` is used, which creates a `new.py` file in the directory where `cptemplate` command is run
+ - `cptemplate` can be used by directly typing the command `cptemplate` in CMD/Terminal
+
+- For creating a new template file, the command `cptemplate new` is used, which creates a `new.py` file in the directory where `cptemplate` command is run
 
 ```shell
 cptemplate new
 ```
 
-For running/testing the file, the command `cptemplate test` is used
+- For running/testing the file, the command `cptemplate test` is used
 
 ```shell
 cptemplate test
