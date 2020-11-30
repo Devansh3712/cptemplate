@@ -68,7 +68,7 @@ def scanf(datatype = str):
         return sys.stdin.readline()
 
 def printf(answer):
-    return sys.stdin.write(str(answer) + "\\n")
+    return sys.stdout.write(str(answer) + "\\n")
 
 def map_input(datatype):
     return map(datatype, sys.stdin.readline().split())
@@ -181,8 +181,8 @@ def bfs_paths(graph, start, goal):
     return queue
 
 #---<Testcases>---#
-sys.stdin = open('input.txt', 'r')
-sys.stdout = open('output.txt', 'w')
+#sys.stdin = open('input.txt', 'r')
+#sys.stdout = open('output.txt', 'w')
 '''
 
 @click.group()
@@ -198,12 +198,21 @@ def new():
     file.close()
 
 @cptemplate.command()
+def test():
+    "run and test the code"
+
+    try:
+        os.system('cmd /k "python new.py"')
+    except:
+        print('An error occured, check new.py')
+
+@cptemplate.command()
 def info():
     "information about the module"
 
     info = [
-        'cptemplate is a python library for making a pre-defined template for competitive programming',
-        'It is an open-source project, made by Devansh',
+        '\ncptemplate is a python library for making a pre-defined template for competitive programming',
+        'It is an open-source project, made by Devansh, available on PyPi',
         'Visit: https://github.com/Devansh3712/cptemplate'
     ]
 
