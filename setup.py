@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
  
 setup( 
         name ='cptemplate',
-        version = '1.0.1',
+        version = '1.0.2',
         author ='Devansh Singh', 
         author_email ='devanshamity@gmail.com', 
         url ='https://github.com/Devansh3712/cptemplate', 
