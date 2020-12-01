@@ -1,5 +1,6 @@
 import click
 import os
+import platform
 
 template = '''
 #---<Libraries>---#
@@ -211,13 +212,19 @@ def test(file_name: str):
 
     if file_name is not None:
         try:
-            os.system(f'cmd /k "python {file_name}.py"')
+            if platform.system() == 'Linux' or platform.system() == 'Darwin':
+                os.system(f'cmd /k "python3 {file_name}.py"')
+            elif platform.system() == 'Windows':
+                os.system(f'cmd /k "python {file_name}.py"')
         except:
             print(f'An error occured, check {file_name}.py file')
 
     else:
         try:
-            os.system('cmd /k "python new.py"')
+            if platform.system() == 'Linux' or platform.system() == 'Darwin':
+                os.system('cmd /k "python3 new.py"')
+            elif platform.system() == 'Windows':
+                os.system('cmd /k "python new.py"')
         except:
             print('An error occured, check new.py file')
 
