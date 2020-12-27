@@ -3,6 +3,7 @@
 Module for creating a pre-defined competitive programming template for python
 
 View on PyPi: https://pypi.org/project/cptemplate/
+View on Libraries.io: https://libraries.io/pypi/cptemplate
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/ansicolortags.svg)](https://pypi.org/project/pycrypt-cli/)
